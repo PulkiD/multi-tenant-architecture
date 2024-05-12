@@ -1,0 +1,23 @@
+{
+  "name": "multi-tenant-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "pm2 start src/index.js --name multi-tenant-architecture"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Pulkit",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4",
+    "nodemon": "^3.1.0",
+    "winston": "^3.13.0"
+  }
+}
