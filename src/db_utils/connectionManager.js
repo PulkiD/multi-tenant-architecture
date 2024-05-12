@@ -9,7 +9,7 @@ const { getTenants } = require("../service/base/tenants.service");
 const BASE_MONGODB_URI = process.env.BASE_MONGODB_URI;
 const BASE_MASTER_DBNAME = process.env.BASE_MASTER_DBNAME;
 
-let connectionMap;
+let connectionMap = {};
 let masterDbConnection;
 
 /**
@@ -28,16 +28,9 @@ const connectAllDb = async () => {
         return;
     }
 
-    connectionMap = tenants
-        .map(async tenant => {
-            return {
-                [tenant.tenantID]: await initTenantDbConnection(tenant.dbURI)
-            };
-        })
-        .reduce((prev, next) => {
-            return Object.assign({}, prev, next);
-        }, {});
-    logger.info("Connected to all tenants databases: ", connectionMap);
+    for (const tenant of tenants) {
+        connectionMap[tenant.tenantID] = await initTenantDbConnection(tenant.dbURI);
+    }
 };
 
 /**

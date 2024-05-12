@@ -47,7 +47,7 @@ const initTenantDbConnection = async (DB_URL) => {
         });
 
         // Require all schemas
-        require("../models/product.model");
+        db.model("productModel", require("../models/product.model"));
         return db;
     } catch (error) {
         logger.error("Error while trying to connect to tenantDBs: ", error);

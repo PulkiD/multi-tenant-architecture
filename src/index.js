@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const { connectAllDb } = require('./db_utils/connectionManager');
 const tenantRouter = require('./routes/tenant.route');
+const productRouter = require('./routes/product.route');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -20,14 +21,12 @@ app.use(bodyParser.json());
 
 connectAllDb();
 
+const connectionResolver = require('./middlewares/connectionResolver');
 app.use('/api/tenants', tenantRouter);
+app.use('/api/products', connectionResolver.resolveTenant, productRouter);
 
 app.use((req, res, next) => {
-    if (!req.route) {
-        const error = new Error("No route matched");
-        error.status = 404;
-        return next(error);
-    }
+    return res.status(404).send("Sorry, can't find that!");
 });
 
 
