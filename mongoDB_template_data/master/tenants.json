@@ -1,0 +1,14 @@
+[
+    {
+        "tenantID": "ABC",
+        "tenantName": "ABC Corp",
+        "currency": "USD",
+        "dbURL": "jdbc:mysql://localhost:3306/ABC"
+    },
+    {
+        "tenantID": "XYZ",
+        "tenantName": "XYZ Corp",
+        "currency": "INR",
+        "dbURL": "jdbc:mysql://localhost:3306/XYZ"
+    }
+]
