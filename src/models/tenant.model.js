@@ -14,17 +14,16 @@ const tenantSchema = new mongoose.Schema(
         currency: {
             type: String,
         },
-        dbURL: {
+        dbURI: {
             type: String,
             required: true,
             unique: true
         }
     },
     {
+        collection: 'tenant',
         timestamps: true
     }
 );
 
-const Tenant = mongoose.model('tenant', tenantSchema);
-
-module.exports = Tenant;
+module.exports = mongoose.model('tenantModel', tenantSchema);

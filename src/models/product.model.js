@@ -21,6 +21,7 @@ const productSchema = new mongoose.Schema(
         }
     },
     {
+        collection: 'product',
         timestamps: true
     }
 );

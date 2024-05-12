@@ -14,8 +14,12 @@
   "author": "Pulkit",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "continuation-local-storage": "^3.2.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "helmet": "^7.1.0",
     "mongoose": "^8.3.4",
     "nodemon": "^3.1.0",
     "winston": "^3.13.0"
