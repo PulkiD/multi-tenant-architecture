@@ -3,4 +3,3 @@
 ## Description
 
 This project covers implementation of multi-tenant architecture using `Express.js` and `MongDB`. 
-
