@@ -3,12 +3,12 @@
         "tenantID": "ABC",
         "tenantName": "ABC Corp",
         "currency": "USD",
-        "dbURI": "mongodb://localhost:27017/ABC"
+        "dbURI": "mongodb://localhost:27017/tenant_ABC"
     },
     {
         "tenantID": "XYZ",
         "tenantName": "XYZ Corp",
         "currency": "INR",
-        "dbURI": "mongodb://localhost:27017/XYZ"
+        "dbURI": "mongodb://localhost:27017/tenant_XYZ"
     }
 ]
